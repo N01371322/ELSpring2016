@@ -1,23 +1,25 @@
 import datetime
 import sqlite3
 
-conn = sqlite3.connect('testTime.db')
+#this function returns the actual date in the format YYY-MM-DD
+def getDate():
+	date = "%s-%s-%s" % (datetime.datetime.today().year, datetime.datetime.today().month, datetime.datetime.today().day)
+	print date
+	return date 
+#this function returns the actual time in the format H:M:S
+def getTime():
+        time = "%s:%s:%s"% (datetime.datetime.today().hour, datetime.datetime.today().minute, datetime.datetime.today().second)
+        print time
+        return time
 
-c = conn.cursor()
-
-date = datetime.datetime.today()
-day = date.day
-month = date.month
-year = date.year
-hour = date.hour
-minute = date.minute
-second = date.second
-
-day = "%s-%s-%s" % (year, month, day)
-hour = "%s:%s:%s" % (hour, minute, second)
-
-c.execute("insert into testTime values ('%s', '%s')" % (day, hour))
-conn.commit()
-conn.close()
-print day, hour
+#this function access the database testTime and inserts
+# a row whith the actual date and time
+def logTime():
+	conn = sqlite3.connect("testTime.db")
+	c = conn.cursor()
+	c.execute("INSERT INTO testTime values ('%s', '%s')" % (getDate(), getTime()))
+	conn.commit()
+	conn.close()
+logTime()
+	
 
