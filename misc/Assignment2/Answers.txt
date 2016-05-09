@@ -1,0 +1,1344 @@
+phelipe@raspberrypi:~ $ ifconfig
+eth0      Link encap:Ethernet  HWaddr b8:27:eb:cb:ce:a9  
+          inet6 addr: fe80::ffce:8bdd:7e1:f8e6/64 Scope:Link
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:236 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:236 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:20283 (19.8 KiB)  TX bytes:20283 (19.8 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 00:e0:4c:1d:30:4e  
+          inet addr:137.140.181.135  Bcast:137.140.183.255  Mask:255.255.252.0
+          inet6 addr: fe80::6cb2:30ce:f037:54c2/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:6129 errors:0 dropped:3944 overruns:0 frame:0
+          TX packets:6059 errors:0 dropped:171 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1957672 (1.8 MiB)  TX bytes:3568332 (3.4 MiB)
+
+wlan1     Link encap:Ethernet  HWaddr 00:0f:60:08:4c:56  
+          inet addr:192.168.42.1  Bcast:192.168.42.255  Mask:255.255.255.0
+          inet6 addr: fe80::e821:d15e:b415:5c21/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:59 errors:0 dropped:5 overruns:0 frame:0
+          TX packets:4437 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:10676 (10.4 KiB)  TX bytes:1752481 (1.6 MiB)
+
+phelipe@raspberrypi:~ $ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       5.9G  3.4G  2.2G  61% /
+devtmpfs        459M     0  459M   0% /dev
+tmpfs           463M     0  463M   0% /dev/shm
+tmpfs           463M   13M  451M   3% /run
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           463M     0  463M   0% /sys/fs/cgroup
+/dev/mmcblk0p6   63M   20M   44M  31% /boot
+tmpfs            93M     0   93M   0% /run/user/1000
+tmpfs            93M     0   93M   0% /run/user/1001
+phelipe@raspberrypi:~ $ du -sk ~/
+52	/home/phelipe/
+phelipe@raspberrypi:~ $ du -sh ~/
+52K	/home/phelipe/
+phelipe@raspberrypi:~ $ ps xa
+  PID TTY      STAT   TIME COMMAND
+    1 ?        Ss     0:40 /sbin/init
+    2 ?        S      0:00 [kthreadd]
+    3 ?        S      0:01 [ksoftirqd/0]
+    5 ?        S<     0:00 [kworker/0:0H]
+    7 ?        S      0:30 [rcu_preempt]
+    8 ?        S      0:00 [rcu_sched]
+    9 ?        S      0:00 [rcu_bh]
+   10 ?        S      0:00 [migration/0]
+   11 ?        S      0:00 [migration/1]
+   12 ?        S      0:00 [ksoftirqd/1]
+   14 ?        S<     0:00 [kworker/1:0H]
+   15 ?        S      0:00 [migration/2]
+   16 ?        S      0:00 [ksoftirqd/2]
+   18 ?        S<     0:00 [kworker/2:0H]
+   19 ?        S      0:00 [migration/3]
+   20 ?        S      0:00 [ksoftirqd/3]
+   22 ?        S<     0:00 [kworker/3:0H]
+   23 ?        S<     0:00 [khelper]
+   24 ?        S      0:00 [kdevtmpfs]
+   25 ?        S<     0:00 [netns]
+   26 ?        S<     0:00 [perf]
+   27 ?        S      0:00 [khungtaskd]
+   28 ?        S<     0:00 [writeback]
+   29 ?        S<     0:00 [crypto]
+   30 ?        S<     0:00 [bioset]
+   31 ?        S<     0:00 [kblockd]
+   33 ?        S<     0:00 [rpciod]
+   34 ?        S      0:00 [kswapd0]
+   35 ?        S      0:00 [fsnotify_mark]
+   36 ?        S<     0:00 [nfsiod]
+   42 ?        S<     0:00 [kthrotld]
+   44 ?        S<     0:00 [VCHIQ-0]
+   45 ?        S<     0:00 [VCHIQr-0]
+   46 ?        S<     0:00 [VCHIQs-0]
+   47 ?        S<     0:00 [iscsi_eh]
+   48 ?        S<     0:00 [dwc_otg]
+   49 ?        S<     0:00 [DWC Notificatio]
+   51 ?        S      0:08 [mmcqd/0]
+   52 ?        S      0:00 [VCHIQka-0]
+   53 ?        S<     0:00 [SMIO]
+   54 ?        S<     0:00 [deferwq]
+   55 ?        S      0:03 [jbd2/mmcblk0p7-]
+   56 ?        S<     0:00 [ext4-rsv-conver]
+   59 ?        S<     0:00 [ipv6_addrconf]
+   77 ?        S<     0:00 [kworker/0:1H]
+  108 ?        Ss     0:27 /lib/systemd/systemd-journald
+  110 ?        Ss     0:00 /lib/systemd/systemd-udevd
+  197 ?        S<     0:00 [cfg80211]
+  371 ?        S      3:46 [RTW_CMD_THREAD]
+  385 ?        Ss     0:00 /usr/sbin/cron -f
+  390 ?        Ss     0:02 /lib/systemd/systemd-logind
+  402 ?        Ss     0:06 avahi-daemon: running [raspberrypi.local]
+  404 ?        Ss     0:01 /usr/bin/dbus-daemon --system --address=systemd: --nofork -
+  424 ?        Ss     0:02 /usr/sbin/thd --daemon --triggers /etc/triggerhappy/trigger
+  425 ?        Ss     0:13 /sbin/dhcpcd -q -b
+  463 ?        S      0:00 avahi-daemon: chroot helper
+  484 ?        S<     0:00 [kworker/2:1H]
+  527 ?        Ssl    0:04 /usr/sbin/rsyslogd -n
+  530 ?        Ss     0:34 /sbin/wpa_supplicant -s -B -P /run/wpa_supplicant.wlan0.pid
+  572 ?        Ss     0:00 /usr/sbin/sshd -D
+  585 ?        Ssl    0:00 /usr/sbin/lightdm
+  620 ?        Ss     0:41 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 107:112
+  676 ?        S<     0:00 [kworker/1:1H]
+  680 tty7     Ss+    2:05 /usr/bin/X :0 -seat seat0 -auth /var/run/lightdm/root/:0 -n
+  711 ?        S      0:00 /usr/sbin/dnsmasq -x /var/run/dnsmasq/dnsmasq.pid -u dnsmas
+  719 tty1     Ss     0:00 /bin/login -f   
+  720 ?        Ss+    0:00 /sbin/agetty --keep-baud 115200 38400 9600 ttyAMA0 vt102
+  798 ?        Sl     0:00 lightdm --session-child 13 16
+  810 ?        Ss     0:00 /lib/systemd/systemd --user
+  815 ?        S      0:00 (sd-pam)  
+  819 ?        Ssl    0:00 /usr/bin/lxsession -s LXDE-pi -e LXDE
+  852 ?        Ss    19:49 /usr/sbin/hostapd -B -P /run/hostapd.pid /etc/hostapd/hosta
+  866 ?        Ss     0:01 /usr/bin/ssh-agent /usr/bin/dbus-launch --exit-with-session
+  869 ?        S      0:00 /usr/bin/dbus-launch --exit-with-session x-session-manager
+  870 ?        Ss     0:00 /usr/bin/dbus-daemon --fork --print-pid 5 --print-address 7
+  876 ?        Sl     0:00 /usr/lib/gvfs/gvfsd
+  880 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writ
+  905 tty1     S+     0:00 -bash
+  914 ?        S      0:00 openbox --config-file /home/pi/.config/openbox/lxde-pi-rc.x
+  916 ?        Sl     0:00 lxpolkit
+  918 ?        Sl    10:35 lxpanel --profile LXDE-pi
+  920 ?        Sl     0:01 pcmanfm --desktop --profile LXDE-pi
+  929 ?        Ss     0:00 /usr/bin/ssh-agent -s
+  934 ?        Ssl    0:00 /usr/lib/policykit-1/polkitd --no-debug
+  943 ?        Sl     0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+  947 ?        Ssl    0:01 /usr/lib/udisks2/udisksd --no-debug
+  957 ?        Sl     0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+  961 ?        Sl     0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+  966 ?        Sl     0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+  970 ?        Sl     0:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
+  977 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.1 /org/gtk/gvfs/exec
+  983 ?        Ssl    0:00 /usr/lib/menu-cache/menu-cached /tmp/.menu-cached-:0-pi
+ 1076 ?        S      0:00 [jbd2/mmcblk0p5-]
+ 1077 ?        S<     0:00 [ext4-rsv-conver]
+ 1134 ?        S<     0:00 [kworker/3:1H]
+ 5957 ?        S      0:00 [kworker/3:0]
+ 6033 ?        S      0:03 [kworker/u8:1]
+ 6052 ?        Ss     0:00 sshd: phelipe [priv]
+ 6060 ?        Ss     0:00 /lib/systemd/systemd --user
+ 6065 ?        S      0:00 (sd-pam)  
+ 6069 ?        S      0:01 sshd: phelipe@pts/0 
+ 6072 pts/0    Ss     0:03 -bash
+ 6788 ?        Ssl    0:00 /usr/lib/packagekit/packagekitd
+ 6819 ?        S      0:00 [kworker/1:2]
+ 6856 ?        S      0:00 [kworker/2:2]
+ 6900 ?        S      0:00 [kworker/0:2]
+ 7020 ?        S      0:00 [kworker/3:2]
+ 7048 ?        S      0:00 [kworker/1:1]
+ 7069 ?        S      0:00 [kworker/u8:2]
+ 7070 ?        S      0:00 [kworker/0:0]
+ 7071 ?        S      0:00 [kworker/2:1]
+ 7079 ?        S      0:00 [kworker/u8:0]
+ 7084 pts/0    R+     0:00 ps xa
+
+phelipe@raspberrypi:~ $ ps xa
+  PID TTY      STAT   TIME COMMAND
+    1 ?        Ss     0:40 /sbin/init
+    2 ?        S      0:00 [kthreadd]
+    3 ?        S      0:01 [ksoftirqd/0]
+    5 ?        S<     0:00 [kworker/0:0H]
+    7 ?        S      0:30 [rcu_preempt]
+    8 ?        S      0:00 [rcu_sched]
+    9 ?        S      0:00 [rcu_bh]
+   10 ?        S      0:00 [migration/0]
+   11 ?        S      0:00 [migration/1]
+   12 ?        S      0:00 [ksoftirqd/1]
+   14 ?        S<     0:00 [kworker/1:0H]
+   15 ?        S      0:00 [migration/2]
+   16 ?        S      0:00 [ksoftirqd/2]
+   18 ?        S<     0:00 [kworker/2:0H]
+   19 ?        S      0:00 [migration/3]
+   20 ?        S      0:00 [ksoftirqd/3]
+   22 ?        S<     0:00 [kworker/3:0H]
+   23 ?        S<     0:00 [khelper]
+   24 ?        S      0:00 [kdevtmpfs]
+   25 ?        S<     0:00 [netns]
+   26 ?        S<     0:00 [perf]
+   27 ?        S      0:00 [khungtaskd]
+   28 ?        S<     0:00 [writeback]
+   29 ?        S<     0:00 [crypto]
+   30 ?        S<     0:00 [bioset]
+   31 ?        S<     0:00 [kblockd]
+   33 ?        S<     0:00 [rpciod]
+   34 ?        S      0:00 [kswapd0]
+   35 ?        S      0:00 [fsnotify_mark]
+   36 ?        S<     0:00 [nfsiod]
+   42 ?        S<     0:00 [kthrotld]
+   44 ?        S<     0:00 [VCHIQ-0]
+   45 ?        S<     0:00 [VCHIQr-0]
+   46 ?        S<     0:00 [VCHIQs-0]
+   47 ?        S<     0:00 [iscsi_eh]
+   48 ?        S<     0:00 [dwc_otg]
+   49 ?        S<     0:00 [DWC Notificatio]
+   51 ?        S      0:08 [mmcqd/0]
+   52 ?        S      0:00 [VCHIQka-0]
+   53 ?        S<     0:00 [SMIO]
+   54 ?        S<     0:00 [deferwq]
+   55 ?        S      0:03 [jbd2/mmcblk0p7-]
+   56 ?        S<     0:00 [ext4-rsv-conver]
+   59 ?        S<     0:00 [ipv6_addrconf]
+   77 ?        S<     0:00 [kworker/0:1H]
+  108 ?        Ss     0:27 /lib/systemd/systemd-journald
+  110 ?        Ss     0:00 /lib/systemd/systemd-udevd
+  197 ?        S<     0:00 [cfg80211]
+  371 ?        S      3:46 [RTW_CMD_THREAD]
+  385 ?        Ss     0:00 /usr/sbin/cron -f
+  390 ?        Ss     0:02 /lib/systemd/systemd-logind
+  402 ?        Ss     0:06 avahi-daemon: running [raspberrypi.local]
+  404 ?        Ss     0:01 /usr/bin/dbus-daemon --system --address=systemd: --nofork -
+  424 ?        Ss     0:02 /usr/sbin/thd --daemon --triggers /etc/triggerhappy/trigger
+  425 ?        Ss     0:13 /sbin/dhcpcd -q -b
+  463 ?        S      0:00 avahi-daemon: chroot helper
+  484 ?        S<     0:00 [kworker/2:1H]
+  527 ?        Ssl    0:04 /usr/sbin/rsyslogd -n
+  530 ?        Ss     0:34 /sbin/wpa_supplicant -s -B -P /run/wpa_supplicant.wlan0.pid
+  572 ?        Ss     0:00 /usr/sbin/sshd -D
+  585 ?        Ssl    0:00 /usr/sbin/lightdm
+  620 ?        Ss     0:41 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 107:112
+  676 ?        S<     0:00 [kworker/1:1H]
+  680 tty7     Ss+    2:05 /usr/bin/X :0 -seat seat0 -auth /var/run/lightdm/root/:0 -n
+  711 ?        S      0:00 /usr/sbin/dnsmasq -x /var/run/dnsmasq/dnsmasq.pid -u dnsmas
+  719 tty1     Ss     0:00 /bin/login -f   
+  720 ?        Ss+    0:00 /sbin/agetty --keep-baud 115200 38400 9600 ttyAMA0 vt102
+  798 ?        Sl     0:00 lightdm --session-child 13 16
+  810 ?        Ss     0:00 /lib/systemd/systemd --user
+  815 ?        S      0:00 (sd-pam)  
+  819 ?        Ssl    0:00 /usr/bin/lxsession -s LXDE-pi -e LXDE
+  852 ?        Ss    19:49 /usr/sbin/hostapd -B -P /run/hostapd.pid /etc/hostapd/hosta
+  866 ?        Ss     0:01 /usr/bin/ssh-agent /usr/bin/dbus-launch --exit-with-session
+  869 ?        S      0:00 /usr/bin/dbus-launch --exit-with-session x-session-manager
+  870 ?        Ss     0:00 /usr/bin/dbus-daemon --fork --print-pid 5 --print-address 7
+  876 ?        Sl     0:00 /usr/lib/gvfs/gvfsd
+  880 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writ
+  905 tty1     S+     0:00 -bash
+  914 ?        S      0:00 openbox --config-file /home/pi/.config/openbox/lxde-pi-rc.x
+  916 ?        Sl     0:00 lxpolkit
+  918 ?        Sl    10:35 lxpanel --profile LXDE-pi
+  920 ?        Sl     0:01 pcmanfm --desktop --profile LXDE-pi
+  929 ?        Ss     0:00 /usr/bin/ssh-agent -s
+  934 ?        Ssl    0:00 /usr/lib/policykit-1/polkitd --no-debug
+  943 ?        Sl     0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+  947 ?        Ssl    0:01 /usr/lib/udisks2/udisksd --no-debug
+  957 ?        Sl     0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+  961 ?        Sl     0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+  966 ?        Sl     0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+  970 ?        Sl     0:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
+  977 ?        Sl     0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.1 /org/gtk/gvfs/exec
+  983 ?        Ssl    0:00 /usr/lib/menu-cache/menu-cached /tmp/.menu-cached-:0-pi
+ 1076 ?        S      0:00 [jbd2/mmcblk0p5-]
+ 1077 ?        S<     0:00 [ext4-rsv-conver]
+ 1134 ?        S<     0:00 [kworker/3:1H]
+ 5957 ?        S      0:00 [kworker/3:0]
+ 6033 ?        S      0:03 [kworker/u8:1]
+ 6052 ?        Ss     0:00 sshd: phelipe [priv]
+ 6060 ?        Ss     0:00 /lib/systemd/systemd --user
+ 6065 ?        S      0:00 (sd-pam)  
+ 6069 ?        R      0:01 sshd: phelipe@pts/0 
+ 6072 pts/0    Ss     0:03 -bash
+ 6788 ?        Ssl    0:00 /usr/lib/packagekit/packagekitd
+ 6819 ?        S      0:00 [kworker/1:2]
+ 6856 ?        S      0:00 [kworker/2:2]
+ 6900 ?        S      0:00 [kworker/0:2]
+ 7020 ?        S      0:00 [kworker/3:2]
+ 7048 ?        S      0:00 [kworker/1:1]
+ 7069 ?        S      0:00 [kworker/u8:2]
+ 7070 ?        S      0:00 [kworker/0:0]
+ 7071 ?        S      0:00 [kworker/2:1]
+ 7079 ?        S      0:00 [kworker/u8:0]
+ 7085 ?        S      0:00 [kworker/1:0]
+ 7086 pts/0    R+     0:00 ps xa
+
+phelipe@raspberrypi:~ $ date
+Wed Feb 10 23:16:24 EST 2016
+
+phelipe@raspberrypi:~ $ who
+pi       :0           2016-02-07 18:16 (:0)
+pi       tty1         2016-02-07 18:16
+phelipe  pts/0        2016-02-10 22:57 (client160-1.wireless.newpaltz.edu)
+
+phelipe@raspberrypi:~ $ whoami
+phelipe
+
+phelipe@raspberrypi:~ $ which pytho
+
+phelipe@raspberrypi:~ $ which nano
+/usr/bin/nano
+
+phelipe@raspberrypi:~ $ ls /sbin
+acpi_available        fsfreeze           mkfs              regdbdump
+agetty                fstab-decode       mkfs.bfs          resize2fs
+apm_available         fstrim             mkfs.cramfs       resolvconf
+badblocks             getcap             mkfs.ext2         rmmod
+blkdiscard            getpcaps           mkfs.ext3         route
+blkid                 getty              mkfs.ext4         rpcbind
+blockdev              halt               mkfs.ext4dev      rpc.statd
+bridge                hdparm             mkfs.fat          rtacct
+capsh                 hwclock            mkfs.minix        rtmon
+cfdisk                ifconfig           mkfs.msdos        runlevel
+chcpu                 ifdown             mkfs.ntfs         runuser
+crda                  ifquery            mkfs.vfat         setcap
+cryptsetup            ifup               mkhomedir_helper  sfdisk
+cryptsetup-reencrypt  init               mkntfs            shadowconfig
+ctrlaltdel            insmod             mkswap            showmount
+debugfs               insserv            mntctl            shutdown
+depmod                installkernel      modinfo           slattach
+dhclient              ip                 modprobe          sm-notify
+dhclient-script       ip6tables          mountall          start-stop-daemon
+dhcpcd                ip6tables-restore  mount.cifs        sulogin
+dhcpcd5               ip6tables-save     mount.fuse        swaplabel
+dmsetup               ipmaddr            mount.lowntfs-3g  swapoff
+dosfsck               iptables           mount.nfs         swapon
+dosfslabel            iptables-restore   mount.nfs4        switch_root
+dphys-swapfile        iptables-save      mount.ntfs        sysctl
+dumpe2fs              iptunnel           mount.ntfs-3g     tc
+e2fsck                isosize            nameif            telinit
+e2image               iw                 ntfsclone         tune2fs
+e2label               iwconfig           ntfscp            udevadm
+e2undo                iwevent            ntfslabel         udevd
+fake-hwclock          iwgetid            ntfsresize        umount.nfs
+fatlabel              iwlist             ntfsundelete      umount.nfs4
+fdisk                 iwpriv             on_ac_power       umount.udisks
+findfs                iwspy              osd_login         umount.udisks2
+fsck                  kbdrate            pam_tally         unix_chkpwd
+fsck.cramfs           killall5           pam_tally2        unix_update
+fsck.ext2             ldconfig           parted            veritysetup
+fsck.ext3             ldconfig.real      partprobe         wipefs
+fsck.ext4             logsave            pivot_root        wpa_action
+fsck.ext4dev          losetup            plipconfig        wpa_cli
+fsck.fat              lsmod              plymouthd         wpa_supplicant
+fsck.minix            MAKEDEV            poweroff          xtables-multi
+fsck.msdos            mii-tool           rarp
+fsck.nfs              mkdosfs            raw
+fsck.vfat             mke2fs             reboot
+
+phelipe@raspberrypi:~ $ lsmod
+Module                  Size  Used by
+sg                     18191  0 
+binfmt_misc             6306  1 
+ctr                     3717  2 
+ccm                     7811  2 
+xt_tcpudp               2140  2 
+xt_comment               784  9 
+xt_multiport            1635  1 
+xt_conntrack            2939  2 
+iptable_filter          1260  1 
+ipt_MASQUERADE           974  2 
+nf_nat_masquerade_ipv4     1901  1 ipt_MASQUERADE
+iptable_nat             1787  1 
+nf_conntrack_ipv4      13413  3 
+nf_defrag_ipv4          1287  1 nf_conntrack_ipv4
+nf_nat_ipv4             4867  1 iptable_nat
+nf_nat                 12659  2 nf_nat_ipv4,nf_nat_masquerade_ipv4
+nf_conntrack           78061  5 nf_nat,nf_nat_ipv4,xt_conntrack,nf_nat_masquerade_ipv4,nf_conntrack_ipv4
+ip_tables              11623  2 iptable_filter,iptable_nat
+x_tables               13630  7 xt_comment,ip_tables,xt_tcpudp,ipt_MASQUERADE,xt_conntrack,xt_multiport,iptable_filter
+arc4                    1753  2 
+rt2800usb              17716  0 
+rt2800lib              71860  1 rt2800usb
+rt2x00usb               8545  1 rt2800usb
+rt2x00lib              36817  3 rt2x00usb,rt2800lib,rt2800usb
+mac80211              541952  3 rt2x00lib,rt2x00usb,rt2800lib
+cfg80211              419759  2 mac80211,rt2x00lib
+crc_ccitt               1161  1 rt2800lib
+rfkill                 16659  3 cfg80211
+8192cu                528485  0 
+i2c_bcm2708             5014  0 
+snd_bcm2835            19739  3 
+snd_pcm                74833  1 snd_bcm2835
+bcm2835_gpiomem         3023  0 
+snd_timer              18164  1 snd_pcm
+snd                    52116  9 snd_bcm2835,snd_timer,snd_pcm
+uio_pdrv_genirq         2966  0 
+uio                     8228  1 uio_pdrv_genirq
+i2c_dev                 6040  0 
+fuse                   81721  3 
+ipv6                  341380  36 
+phelipe@raspberrypi:~ $ which mount
+/bin/mount
+phelipe@raspberrypi:~ $ mount
+/dev/mmcblk0p7 on / type ext4 (rw,noatime,data=ordered)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=469748k,nr_inodes=117437,mode=755)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=22,pgrp=1,timeout=300,minproto=5,maxproto=5,direct)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+/dev/mmcblk0p6 on /boot type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,errors=remount-ro)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=94812k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+/dev/mmcblk0p5 on /media/pi/6cf0d232-0206-4024-ad60-cd803aaae5ea type ext4 (rw,nosuid,nodev,relatime,data=ordered,uhelper=udisks2)
+tmpfs on /run/user/1001 type tmpfs (rw,nosuid,nodev,relatime,size=94812k,mode=700,uid=1001,gid=1001)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+phelipe@raspberrypi:~ $ which sqlite
+
+phelipe@raspberrypi:~ $ which sqlite3
+/usr/bin/sqlite3
+
+phelipe@raspberrypi:~ $ sudo apt-get install sqlite3
+[sudo] password for phelipe: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+sqlite3 is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+phelipe@raspberrypi:~ $ which sqlite3
+/usr/bin/sqlite3
+phelipe@raspberrypi:~ $  dpkg -l installed_packages.txt >installed_packages.txt
+dpkg-query: no packages found matching installed_packages.txt
+phelipe@raspberrypi:~ $  tail installed_packages.txt
+phelipe@raspberrypi:~ $  wc -l installed_packages.txt 
+0 installed_packages.txt
+phelipe@raspberrypi:~ $  find / -iname 'syslog*'
+/usr/lib/ruby/2.1.0/syslog
+/usr/lib/ruby/1.9.1/arm-linux-eabihf/syslog.so
+/usr/lib/pypy-upstream/lib_pypy/syslog.py
+/usr/lib/pypy-upstream/lib_pypy/syslog.pyc
+/usr/lib/arm-linux-gnueabihf/ruby/2.1.0/syslog.so
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/auto/Sys/Syslog
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/auto/Sys/Syslog/Syslog.so
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/syslog.ph
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/bits/syslog-path.ph
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/bits/syslog-ldbl.ph
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/bits/syslog.ph
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/Sys/Syslog.pm
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/sys/syslog.ph
+/usr/share/doc/libruby1.9.1/syslog
+/usr/share/doc/libruby1.9.1/syslog/syslog.txt
+/usr/share/doc/busybox/syslog.conf.txt
+/usr/share/ri/1.9.1/system/Syslog
+/usr/share/man/man3/syslog.3.gz
+/usr/share/man/man2/syslog.2.gz
+/usr/include/syslog.h
+/usr/include/arm-linux-gnueabihf/bits/syslog-path.h
+/usr/include/arm-linux-gnueabihf/bits/syslog-ldbl.h
+/usr/include/arm-linux-gnueabihf/bits/syslog.h
+/usr/include/arm-linux-gnueabihf/sys/syslog.h
+/lib/systemd/system/syslog.socket
+find: `/run/udisks2': Permission denied
+find: `/run/lightdm': Permission denied
+find: `/run/wpa_supplicant': Permission denied
+find: `/run/user/1000': Permission denied
+find: `/run/log/journal/5e3a8d5cbaff427898fd4b9ec446e38e': Permission denied
+find: `/run/systemd/ask-password-block': Permission denied
+/run/systemd/journal/syslog
+find: `/run/systemd/inaccessible': Permission denied
+find: `/etc/polkit-1/localauthority': Permission denied
+find: `/etc/ssl/private': Permission denied
+/etc/systemd/system/syslog.service
+find: `/media/pi': Permission denied
+find: `/lost+found': Permission denied
+find: `/proc/tty/driver': Permission denied
+find: `/proc/1/task/1/fd': Permission denied
+find: `/proc/1/task/1/fdinfo': Permission denied
+find: `/proc/1/task/1/ns': Permission denied
+find: `/proc/1/fd': Permission denied
+find: `/proc/1/fdinfo': Permission denied
+find: `/proc/1/ns': Permission denied
+find: `/proc/2/task/2/fd': Permission denied
+find: `/proc/2/task/2/fdinfo': Permission denied
+find: `/proc/2/task/2/ns': Permission denied
+find: `/proc/2/fd': Permission denied
+find: `/proc/2/fdinfo': Permission denied
+find: `/proc/2/ns': Permission denied
+find: `/proc/3/task/3/fd': Permission denied
+find: `/proc/3/task/3/fdinfo': Permission denied
+find: `/proc/3/task/3/ns': Permission denied
+find: `/proc/3/fd': Permission denied
+find: `/proc/3/fdinfo': Permission denied
+find: `/proc/3/ns': Permission denied
+find: `/proc/5/task/5/fd': Permission denied
+find: `/proc/5/task/5/fdinfo': Permission denied
+find: `/proc/5/task/5/ns': Permission denied
+find: `/proc/5/fd': Permission denied
+find: `/proc/5/fdinfo': Permission denied
+find: `/proc/5/ns': Permission denied
+find: `/proc/7/task/7/fd': Permission denied
+find: `/proc/7/task/7/fdinfo': Permission denied
+find: `/proc/7/task/7/ns': Permission denied
+find: `/proc/7/fd': Permission denied
+find: `/proc/7/fdinfo': Permission denied
+find: `/proc/7/ns': Permission denied
+find: `/proc/8/task/8/fd': Permission denied
+find: `/proc/8/task/8/fdinfo': Permission denied
+find: `/proc/8/task/8/ns': Permission denied
+find: `/proc/8/fd': Permission denied
+find: `/proc/8/fdinfo': Permission denied
+find: `/proc/8/ns': Permission denied
+find: `/proc/9/task/9/fd': Permission denied
+find: `/proc/9/task/9/fdinfo': Permission denied
+find: `/proc/9/task/9/ns': Permission denied
+find: `/proc/9/fd': Permission denied
+find: `/proc/9/fdinfo': Permission denied
+find: `/proc/9/ns': Permission denied
+find: `/proc/10/task/10/fd': Permission denied
+find: `/proc/10/task/10/fdinfo': Permission denied
+find: `/proc/10/task/10/ns': Permission denied
+find: `/proc/10/fd': Permission denied
+find: `/proc/10/fdinfo': Permission denied
+find: `/proc/10/ns': Permission denied
+find: `/proc/11/task/11/fd': Permission denied
+find: `/proc/11/task/11/fdinfo': Permission denied
+find: `/proc/11/task/11/ns': Permission denied
+find: `/proc/11/fd': Permission denied
+find: `/proc/11/fdinfo': Permission denied
+find: `/proc/11/ns': Permission denied
+find: `/proc/12/task/12/fd': Permission denied
+find: `/proc/12/task/12/fdinfo': Permission denied
+find: `/proc/12/task/12/ns': Permission denied
+find: `/proc/12/fd': Permission denied
+find: `/proc/12/fdinfo': Permission denied
+find: `/proc/12/ns': Permission denied
+find: `/proc/14/task/14/fd': Permission denied
+find: `/proc/14/task/14/fdinfo': Permission denied
+find: `/proc/14/task/14/ns': Permission denied
+find: `/proc/14/fd': Permission denied
+find: `/proc/14/fdinfo': Permission denied
+find: `/proc/14/ns': Permission denied
+find: `/proc/15/task/15/fd': Permission denied
+find: `/proc/15/task/15/fdinfo': Permission denied
+find: `/proc/15/task/15/ns': Permission denied
+find: `/proc/15/fd': Permission denied
+find: `/proc/15/fdinfo': Permission denied
+find: `/proc/15/ns': Permission denied
+find: `/proc/16/task/16/fd': Permission denied
+find: `/proc/16/task/16/fdinfo': Permission denied
+find: `/proc/16/task/16/ns': Permission denied
+find: `/proc/16/fd': Permission denied
+find: `/proc/16/fdinfo': Permission denied
+find: `/proc/16/ns': Permission denied
+find: `/proc/18/task/18/fd': Permission denied
+find: `/proc/18/task/18/fdinfo': Permission denied
+find: `/proc/18/task/18/ns': Permission denied
+find: `/proc/18/fd': Permission denied
+find: `/proc/18/fdinfo': Permission denied
+find: `/proc/18/ns': Permission denied
+find: `/proc/19/task/19/fd': Permission denied
+find: `/proc/19/task/19/fdinfo': Permission denied
+find: `/proc/19/task/19/ns': Permission denied
+find: `/proc/19/fd': Permission denied
+find: `/proc/19/fdinfo': Permission denied
+find: `/proc/19/ns': Permission denied
+find: `/proc/20/task/20/fd': Permission denied
+find: `/proc/20/task/20/fdinfo': Permission denied
+find: `/proc/20/task/20/ns': Permission denied
+find: `/proc/20/fd': Permission denied
+find: `/proc/20/fdinfo': Permission denied
+find: `/proc/20/ns': Permission denied
+find: `/proc/22/task/22/fd': Permission denied
+find: `/proc/22/task/22/fdinfo': Permission denied
+find: `/proc/22/task/22/ns': Permission denied
+find: `/proc/22/fd': Permission denied
+find: `/proc/22/fdinfo': Permission denied
+find: `/proc/22/ns': Permission denied
+find: `/proc/23/task/23/fd': Permission denied
+find: `/proc/23/task/23/fdinfo': Permission denied
+find: `/proc/23/task/23/ns': Permission denied
+find: `/proc/23/fd': Permission denied
+find: `/proc/23/fdinfo': Permission denied
+find: `/proc/23/ns': Permission denied
+find: `/proc/24/task/24/fd': Permission denied
+find: `/proc/24/task/24/fdinfo': Permission denied
+find: `/proc/24/task/24/ns': Permission denied
+find: `/proc/24/fd': Permission denied
+find: `/proc/24/fdinfo': Permission denied
+find: `/proc/24/ns': Permission denied
+find: `/proc/25/task/25/fd': Permission denied
+find: `/proc/25/task/25/fdinfo': Permission denied
+find: `/proc/25/task/25/ns': Permission denied
+find: `/proc/25/fd': Permission denied
+find: `/proc/25/fdinfo': Permission denied
+find: `/proc/25/ns': Permission denied
+find: `/proc/26/task/26/fd': Permission denied
+find: `/proc/26/task/26/fdinfo': Permission denied
+find: `/proc/26/task/26/ns': Permission denied
+find: `/proc/26/fd': Permission denied
+find: `/proc/26/fdinfo': Permission denied
+find: `/proc/26/ns': Permission denied
+find: `/proc/27/task/27/fd': Permission denied
+find: `/proc/27/task/27/fdinfo': Permission denied
+find: `/proc/27/task/27/ns': Permission denied
+find: `/proc/27/fd': Permission denied
+find: `/proc/27/fdinfo': Permission denied
+find: `/proc/27/ns': Permission denied
+find: `/proc/28/task/28/fd': Permission denied
+find: `/proc/28/task/28/fdinfo': Permission denied
+find: `/proc/28/task/28/ns': Permission denied
+find: `/proc/28/fd': Permission denied
+find: `/proc/28/fdinfo': Permission denied
+find: `/proc/28/ns': Permission denied
+find: `/proc/29/task/29/fd': Permission denied
+find: `/proc/29/task/29/fdinfo': Permission denied
+find: `/proc/29/task/29/ns': Permission denied
+find: `/proc/29/fd': Permission denied
+find: `/proc/29/fdinfo': Permission denied
+find: `/proc/29/ns': Permission denied
+find: `/proc/30/task/30/fd': Permission denied
+find: `/proc/30/task/30/fdinfo': Permission denied
+find: `/proc/30/task/30/ns': Permission denied
+find: `/proc/30/fd': Permission denied
+find: `/proc/30/fdinfo': Permission denied
+find: `/proc/30/ns': Permission denied
+find: `/proc/31/task/31/fd': Permission denied
+find: `/proc/31/task/31/fdinfo': Permission denied
+find: `/proc/31/task/31/ns': Permission denied
+find: `/proc/31/fd': Permission denied
+find: `/proc/31/fdinfo': Permission denied
+find: `/proc/31/ns': Permission denied
+find: `/proc/33/task/33/fd': Permission denied
+find: `/proc/33/task/33/fdinfo': Permission denied
+find: `/proc/33/task/33/ns': Permission denied
+find: `/proc/33/fd': Permission denied
+find: `/proc/33/fdinfo': Permission denied
+find: `/proc/33/ns': Permission denied
+find: `/proc/34/task/34/fd': Permission denied
+find: `/proc/34/task/34/fdinfo': Permission denied
+find: `/proc/34/task/34/ns': Permission denied
+find: `/proc/34/fd': Permission denied
+find: `/proc/34/fdinfo': Permission denied
+find: `/proc/34/ns': Permission denied
+find: `/proc/35/task/35/fd': Permission denied
+find: `/proc/35/task/35/fdinfo': Permission denied
+find: `/proc/35/task/35/ns': Permission denied
+find: `/proc/35/fd': Permission denied
+find: `/proc/35/fdinfo': Permission denied
+find: `/proc/35/ns': Permission denied
+find: `/proc/36/task/36/fd': Permission denied
+find: `/proc/36/task/36/fdinfo': Permission denied
+find: `/proc/36/task/36/ns': Permission denied
+find: `/proc/36/fd': Permission denied
+find: `/proc/36/fdinfo': Permission denied
+find: `/proc/36/ns': Permission denied
+find: `/proc/42/task/42/fd': Permission denied
+find: `/proc/42/task/42/fdinfo': Permission denied
+find: `/proc/42/task/42/ns': Permission denied
+find: `/proc/42/fd': Permission denied
+find: `/proc/42/fdinfo': Permission denied
+find: `/proc/42/ns': Permission denied
+find: `/proc/44/task/44/fd': Permission denied
+find: `/proc/44/task/44/fdinfo': Permission denied
+find: `/proc/44/task/44/ns': Permission denied
+find: `/proc/44/fd': Permission denied
+find: `/proc/44/fdinfo': Permission denied
+find: `/proc/44/ns': Permission denied
+find: `/proc/45/task/45/fd': Permission denied
+find: `/proc/45/task/45/fdinfo': Permission denied
+find: `/proc/45/task/45/ns': Permission denied
+find: `/proc/45/fd': Permission denied
+find: `/proc/45/fdinfo': Permission denied
+find: `/proc/45/ns': Permission denied
+find: `/proc/46/task/46/fd': Permission denied
+find: `/proc/46/task/46/fdinfo': Permission denied
+find: `/proc/46/task/46/ns': Permission denied
+find: `/proc/46/fd': Permission denied
+find: `/proc/46/fdinfo': Permission denied
+find: `/proc/46/ns': Permission denied
+find: `/proc/47/task/47/fd': Permission denied
+find: `/proc/47/task/47/fdinfo': Permission denied
+find: `/proc/47/task/47/ns': Permission denied
+find: `/proc/47/fd': Permission denied
+find: `/proc/47/fdinfo': Permission denied
+find: `/proc/47/ns': Permission denied
+find: `/proc/48/task/48/fd': Permission denied
+find: `/proc/48/task/48/fdinfo': Permission denied
+find: `/proc/48/task/48/ns': Permission denied
+find: `/proc/48/fd': Permission denied
+find: `/proc/48/fdinfo': Permission denied
+find: `/proc/48/ns': Permission denied
+find: `/proc/49/task/49/fd': Permission denied
+find: `/proc/49/task/49/fdinfo': Permission denied
+find: `/proc/49/task/49/ns': Permission denied
+find: `/proc/49/fd': Permission denied
+find: `/proc/49/fdinfo': Permission denied
+find: `/proc/49/ns': Permission denied
+find: `/proc/51/task/51/fd': Permission denied
+find: `/proc/51/task/51/fdinfo': Permission denied
+find: `/proc/51/task/51/ns': Permission denied
+find: `/proc/51/fd': Permission denied
+find: `/proc/51/fdinfo': Permission denied
+find: `/proc/51/ns': Permission denied
+find: `/proc/52/task/52/fd': Permission denied
+find: `/proc/52/task/52/fdinfo': Permission denied
+find: `/proc/52/task/52/ns': Permission denied
+find: `/proc/52/fd': Permission denied
+find: `/proc/52/fdinfo': Permission denied
+find: `/proc/52/ns': Permission denied
+find: `/proc/53/task/53/fd': Permission denied
+find: `/proc/53/task/53/fdinfo': Permission denied
+find: `/proc/53/task/53/ns': Permission denied
+find: `/proc/53/fd': Permission denied
+find: `/proc/53/fdinfo': Permission denied
+find: `/proc/53/ns': Permission denied
+find: `/proc/54/task/54/fd': Permission denied
+find: `/proc/54/task/54/fdinfo': Permission denied
+find: `/proc/54/task/54/ns': Permission denied
+find: `/proc/54/fd': Permission denied
+find: `/proc/54/fdinfo': Permission denied
+find: `/proc/54/ns': Permission denied
+find: `/proc/55/task/55/fd': Permission denied
+find: `/proc/55/task/55/fdinfo': Permission denied
+find: `/proc/55/task/55/ns': Permission denied
+find: `/proc/55/fd': Permission denied
+find: `/proc/55/fdinfo': Permission denied
+find: `/proc/55/ns': Permission denied
+find: `/proc/56/task/56/fd': Permission denied
+find: `/proc/56/task/56/fdinfo': Permission denied
+find: `/proc/56/task/56/ns': Permission denied
+find: `/proc/56/fd': Permission denied
+find: `/proc/56/fdinfo': Permission denied
+find: `/proc/56/ns': Permission denied
+find: `/proc/59/task/59/fd': Permission denied
+find: `/proc/59/task/59/fdinfo': Permission denied
+find: `/proc/59/task/59/ns': Permission denied
+find: `/proc/59/fd': Permission denied
+find: `/proc/59/fdinfo': Permission denied
+find: `/proc/59/ns': Permission denied
+find: `/proc/77/task/77/fd': Permission denied
+find: `/proc/77/task/77/fdinfo': Permission denied
+find: `/proc/77/task/77/ns': Permission denied
+find: `/proc/77/fd': Permission denied
+find: `/proc/77/fdinfo': Permission denied
+find: `/proc/77/ns': Permission denied
+find: `/proc/108/task/108/fd': Permission denied
+find: `/proc/108/task/108/fdinfo': Permission denied
+find: `/proc/108/task/108/ns': Permission denied
+find: `/proc/108/fd': Permission denied
+find: `/proc/108/fdinfo': Permission denied
+find: `/proc/108/ns': Permission denied
+find: `/proc/110/task/110/fd': Permission denied
+find: `/proc/110/task/110/fdinfo': Permission denied
+find: `/proc/110/task/110/ns': Permission denied
+find: `/proc/110/fd': Permission denied
+find: `/proc/110/fdinfo': Permission denied
+find: `/proc/110/ns': Permission denied
+find: `/proc/197/task/197/fd': Permission denied
+find: `/proc/197/task/197/fdinfo': Permission denied
+find: `/proc/197/task/197/ns': Permission denied
+find: `/proc/197/fd': Permission denied
+find: `/proc/197/fdinfo': Permission denied
+find: `/proc/197/ns': Permission denied
+find: `/proc/371/task/371/fd': Permission denied
+find: `/proc/371/task/371/fdinfo': Permission denied
+find: `/proc/371/task/371/ns': Permission denied
+find: `/proc/371/fd': Permission denied
+find: `/proc/371/fdinfo': Permission denied
+find: `/proc/371/ns': Permission denied
+find: `/proc/385/task/385/fd': Permission denied
+find: `/proc/385/task/385/fdinfo': Permission denied
+find: `/proc/385/task/385/ns': Permission denied
+find: `/proc/385/fd': Permission denied
+find: `/proc/385/fdinfo': Permission denied
+find: `/proc/385/ns': Permission denied
+find: `/proc/390/task/390/fd': Permission denied
+find: `/proc/390/task/390/fdinfo': Permission denied
+find: `/proc/390/task/390/ns': Permission denied
+find: `/proc/390/fd': Permission denied
+find: `/proc/390/fdinfo': Permission denied
+find: `/proc/390/ns': Permission denied
+find: `/proc/402/task/402/fd': Permission denied
+find: `/proc/402/task/402/fdinfo': Permission denied
+find: `/proc/402/task/402/ns': Permission denied
+find: `/proc/402/fd': Permission denied
+find: `/proc/402/fdinfo': Permission denied
+find: `/proc/402/ns': Permission denied
+find: `/proc/404/task/404/fd': Permission denied
+find: `/proc/404/task/404/fdinfo': Permission denied
+find: `/proc/404/task/404/ns': Permission denied
+find: `/proc/404/fd': Permission denied
+find: `/proc/404/fdinfo': Permission denied
+find: `/proc/404/ns': Permission denied
+find: `/proc/424/task/424/fd': Permission denied
+find: `/proc/424/task/424/fdinfo': Permission denied
+find: `/proc/424/task/424/ns': Permission denied
+find: `/proc/424/fd': Permission denied
+find: `/proc/424/fdinfo': Permission denied
+find: `/proc/424/ns': Permission denied
+find: `/proc/425/task/425/fd': Permission denied
+find: `/proc/425/task/425/fdinfo': Permission denied
+find: `/proc/425/task/425/ns': Permission denied
+find: `/proc/425/fd': Permission denied
+find: `/proc/425/fdinfo': Permission denied
+find: `/proc/425/ns': Permission denied
+find: `/proc/463/task/463/fd': Permission denied
+find: `/proc/463/task/463/fdinfo': Permission denied
+find: `/proc/463/task/463/ns': Permission denied
+find: `/proc/463/fd': Permission denied
+find: `/proc/463/fdinfo': Permission denied
+find: `/proc/463/ns': Permission denied
+find: `/proc/484/task/484/fd': Permission denied
+find: `/proc/484/task/484/fdinfo': Permission denied
+find: `/proc/484/task/484/ns': Permission denied
+find: `/proc/484/fd': Permission denied
+find: `/proc/484/fdinfo': Permission denied
+find: `/proc/484/ns': Permission denied
+find: `/proc/527/task/527/fd': Permission denied
+find: `/proc/527/task/527/fdinfo': Permission denied
+find: `/proc/527/task/527/ns': Permission denied
+find: `/proc/527/task/539/fd': Permission denied
+find: `/proc/527/task/539/fdinfo': Permission denied
+find: `/proc/527/task/539/ns': Permission denied
+find: `/proc/527/task/540/fd': Permission denied
+find: `/proc/527/task/540/fdinfo': Permission denied
+find: `/proc/527/task/540/ns': Permission denied
+find: `/proc/527/task/541/fd': Permission denied
+find: `/proc/527/task/541/fdinfo': Permission denied
+find: `/proc/527/task/541/ns': Permission denied
+find: `/proc/527/fd': Permission denied
+find: `/proc/527/fdinfo': Permission denied
+find: `/proc/527/ns': Permission denied
+find: `/proc/530/task/530/fd': Permission denied
+find: `/proc/530/task/530/fdinfo': Permission denied
+find: `/proc/530/task/530/ns': Permission denied
+find: `/proc/530/fd': Permission denied
+find: `/proc/530/fdinfo': Permission denied
+find: `/proc/530/ns': Permission denied
+find: `/proc/572/task/572/fd': Permission denied
+find: `/proc/572/task/572/fdinfo': Permission denied
+find: `/proc/572/task/572/ns': Permission denied
+find: `/proc/572/fd': Permission denied
+find: `/proc/572/fdinfo': Permission denied
+find: `/proc/572/ns': Permission denied
+find: `/proc/585/task/585/fd': Permission denied
+find: `/proc/585/task/585/fdinfo': Permission denied
+find: `/proc/585/task/585/ns': Permission denied
+find: `/proc/585/task/675/fd': Permission denied
+find: `/proc/585/task/675/fdinfo': Permission denied
+find: `/proc/585/task/675/ns': Permission denied
+find: `/proc/585/task/678/fd': Permission denied
+find: `/proc/585/task/678/fdinfo': Permission denied
+find: `/proc/585/task/678/ns': Permission denied
+find: `/proc/585/fd': Permission denied
+find: `/proc/585/fdinfo': Permission denied
+find: `/proc/585/ns': Permission denied
+find: `/proc/620/task/620/fd': Permission denied
+find: `/proc/620/task/620/fdinfo': Permission denied
+find: `/proc/620/task/620/ns': Permission denied
+find: `/proc/620/fd': Permission denied
+find: `/proc/620/fdinfo': Permission denied
+find: `/proc/620/ns': Permission denied
+find: `/proc/676/task/676/fd': Permission denied
+find: `/proc/676/task/676/fdinfo': Permission denied
+find: `/proc/676/task/676/ns': Permission denied
+find: `/proc/676/fd': Permission denied
+find: `/proc/676/fdinfo': Permission denied
+find: `/proc/676/ns': Permission denied
+find: `/proc/680/task/680/fd': Permission denied
+find: `/proc/680/task/680/fdinfo': Permission denied
+find: `/proc/680/task/680/ns': Permission denied
+find: `/proc/680/fd': Permission denied
+find: `/proc/680/fdinfo': Permission denied
+find: `/proc/680/ns': Permission denied
+find: `/proc/711/task/711/fd': Permission denied
+find: `/proc/711/task/711/fdinfo': Permission denied
+find: `/proc/711/task/711/ns': Permission denied
+find: `/proc/711/fd': Permission denied
+find: `/proc/711/fdinfo': Permission denied
+find: `/proc/711/ns': Permission denied
+find: `/proc/719/task/719/fd': Permission denied
+find: `/proc/719/task/719/fdinfo': Permission denied
+find: `/proc/719/task/719/ns': Permission denied
+find: `/proc/719/fd': Permission denied
+find: `/proc/719/fdinfo': Permission denied
+find: `/proc/719/ns': Permission denied
+find: `/proc/720/task/720/fd': Permission denied
+find: `/proc/720/task/720/fdinfo': Permission denied
+find: `/proc/720/task/720/ns': Permission denied
+find: `/proc/720/fd': Permission denied
+find: `/proc/720/fdinfo': Permission denied
+find: `/proc/720/ns': Permission denied
+find: `/proc/798/task/798/fd': Permission denied
+find: `/proc/798/task/798/fdinfo': Permission denied
+find: `/proc/798/task/798/ns': Permission denied
+find: `/proc/798/task/803/fd': Permission denied
+find: `/proc/798/task/803/fdinfo': Permission denied
+find: `/proc/798/task/803/ns': Permission denied
+find: `/proc/798/task/804/fd': Permission denied
+find: `/proc/798/task/804/fdinfo': Permission denied
+find: `/proc/798/task/804/ns': Permission denied
+find: `/proc/798/fd': Permission denied
+find: `/proc/798/fdinfo': Permission denied
+find: `/proc/798/ns': Permission denied
+find: `/proc/810/task/810/fd': Permission denied
+find: `/proc/810/task/810/fdinfo': Permission denied
+find: `/proc/810/task/810/ns': Permission denied
+find: `/proc/810/fd': Permission denied
+find: `/proc/810/fdinfo': Permission denied
+find: `/proc/810/ns': Permission denied
+find: `/proc/815/task/815/fd': Permission denied
+find: `/proc/815/task/815/fdinfo': Permission denied
+find: `/proc/815/task/815/ns': Permission denied
+find: `/proc/815/fd': Permission denied
+find: `/proc/815/fdinfo': Permission denied
+find: `/proc/815/ns': Permission denied
+find: `/proc/819/task/819/fd': Permission denied
+find: `/proc/819/task/819/fdinfo': Permission denied
+find: `/proc/819/task/819/ns': Permission denied
+find: `/proc/819/task/874/fd': Permission denied
+find: `/proc/819/task/874/fdinfo': Permission denied
+find: `/proc/819/task/874/ns': Permission denied
+find: `/proc/819/task/910/fd': Permission denied
+find: `/proc/819/task/910/fdinfo': Permission denied
+find: `/proc/819/task/910/ns': Permission denied
+find: `/proc/819/fd': Permission denied
+find: `/proc/819/fdinfo': Permission denied
+find: `/proc/819/ns': Permission denied
+find: `/proc/852/task/852/fd': Permission denied
+find: `/proc/852/task/852/fdinfo': Permission denied
+find: `/proc/852/task/852/ns': Permission denied
+find: `/proc/852/fd': Permission denied
+find: `/proc/852/fdinfo': Permission denied
+find: `/proc/852/ns': Permission denied
+find: `/proc/866/task/866/fd': Permission denied
+find: `/proc/866/task/866/fdinfo': Permission denied
+find: `/proc/866/task/866/ns': Permission denied
+find: `/proc/866/fd': Permission denied
+find: `/proc/866/fdinfo': Permission denied
+find: `/proc/866/ns': Permission denied
+find: `/proc/869/task/869/fd': Permission denied
+find: `/proc/869/task/869/fdinfo': Permission denied
+find: `/proc/869/task/869/ns': Permission denied
+find: `/proc/869/fd': Permission denied
+find: `/proc/869/fdinfo': Permission denied
+find: `/proc/869/ns': Permission denied
+find: `/proc/870/task/870/fd': Permission denied
+find: `/proc/870/task/870/fdinfo': Permission denied
+find: `/proc/870/task/870/ns': Permission denied
+find: `/proc/870/fd': Permission denied
+find: `/proc/870/fdinfo': Permission denied
+find: `/proc/870/ns': Permission denied
+find: `/proc/876/task/876/fd': Permission denied
+find: `/proc/876/task/876/fdinfo': Permission denied
+find: `/proc/876/task/876/ns': Permission denied
+find: `/proc/876/task/877/fd': Permission denied
+find: `/proc/876/task/877/fdinfo': Permission denied
+find: `/proc/876/task/877/ns': Permission denied
+find: `/proc/876/fd': Permission denied
+find: `/proc/876/fdinfo': Permission denied
+find: `/proc/876/ns': Permission denied
+find: `/proc/880/task/880/fd': Permission denied
+find: `/proc/880/task/880/fdinfo': Permission denied
+find: `/proc/880/task/880/ns': Permission denied
+find: `/proc/880/task/882/fd': Permission denied
+find: `/proc/880/task/882/fdinfo': Permission denied
+find: `/proc/880/task/882/ns': Permission denied
+find: `/proc/880/task/883/fd': Permission denied
+find: `/proc/880/task/883/fdinfo': Permission denied
+find: `/proc/880/task/883/ns': Permission denied
+find: `/proc/880/task/884/fd': Permission denied
+find: `/proc/880/task/884/fdinfo': Permission denied
+find: `/proc/880/task/884/ns': Permission denied
+find: `/proc/880/task/885/fd': Permission denied
+find: `/proc/880/task/885/fdinfo': Permission denied
+find: `/proc/880/task/885/ns': Permission denied
+find: `/proc/880/fd': Permission denied
+find: `/proc/880/fdinfo': Permission denied
+find: `/proc/880/ns': Permission denied
+find: `/proc/905/task/905/fd': Permission denied
+find: `/proc/905/task/905/fdinfo': Permission denied
+find: `/proc/905/task/905/ns': Permission denied
+find: `/proc/905/fd': Permission denied
+find: `/proc/905/fdinfo': Permission denied
+find: `/proc/905/ns': Permission denied
+find: `/proc/914/task/914/fd': Permission denied
+find: `/proc/914/task/914/fdinfo': Permission denied
+find: `/proc/914/task/914/ns': Permission denied
+find: `/proc/914/fd': Permission denied
+find: `/proc/914/fdinfo': Permission denied
+find: `/proc/914/ns': Permission denied
+find: `/proc/916/task/916/fd': Permission denied
+find: `/proc/916/task/916/fdinfo': Permission denied
+find: `/proc/916/task/916/ns': Permission denied
+find: `/proc/916/task/932/fd': Permission denied
+find: `/proc/916/task/932/fdinfo': Permission denied
+find: `/proc/916/task/932/ns': Permission denied
+find: `/proc/916/fd': Permission denied
+find: `/proc/916/fdinfo': Permission denied
+find: `/proc/916/ns': Permission denied
+find: `/proc/918/task/918/fd': Permission denied
+find: `/proc/918/task/918/fdinfo': Permission denied
+find: `/proc/918/task/918/ns': Permission denied
+find: `/proc/918/task/944/fd': Permission denied
+find: `/proc/918/task/944/fdinfo': Permission denied
+find: `/proc/918/task/944/ns': Permission denied
+find: `/proc/918/task/945/fd': Permission denied
+find: `/proc/918/task/945/fdinfo': Permission denied
+find: `/proc/918/task/945/ns': Permission denied
+find: `/proc/918/task/973/fd': Permission denied
+find: `/proc/918/task/973/fdinfo': Permission denied
+find: `/proc/918/task/973/ns': Permission denied
+find: `/proc/918/task/984/fd': Permission denied
+find: `/proc/918/task/984/fdinfo': Permission denied
+find: `/proc/918/task/984/ns': Permission denied
+find: `/proc/918/task/1084/fd': Permission denied
+find: `/proc/918/task/1084/fdinfo': Permission denied
+find: `/proc/918/task/1084/ns': Permission denied
+find: `/proc/918/fd': Permission denied
+find: `/proc/918/fdinfo': Permission denied
+find: `/proc/918/ns': Permission denied
+find: `/proc/920/task/920/fd': Permission denied
+find: `/proc/920/task/920/fdinfo': Permission denied
+find: `/proc/920/task/920/ns': Permission denied
+find: `/proc/920/task/940/fd': Permission denied
+find: `/proc/920/task/940/fdinfo': Permission denied
+find: `/proc/920/task/940/ns': Permission denied
+find: `/proc/920/task/941/fd': Permission denied
+find: `/proc/920/task/941/fdinfo': Permission denied
+find: `/proc/920/task/941/ns': Permission denied
+find: `/proc/920/fd': Permission denied
+find: `/proc/920/fdinfo': Permission denied
+find: `/proc/920/ns': Permission denied
+find: `/proc/929/task/929/fd': Permission denied
+find: `/proc/929/task/929/fdinfo': Permission denied
+find: `/proc/929/task/929/ns': Permission denied
+find: `/proc/929/fd': Permission denied
+find: `/proc/929/fdinfo': Permission denied
+find: `/proc/929/ns': Permission denied
+find: `/proc/934/task/934/fd': Permission denied
+find: `/proc/934/task/934/fdinfo': Permission denied
+find: `/proc/934/task/934/ns': Permission denied
+find: `/proc/934/task/936/fd': Permission denied
+find: `/proc/934/task/936/fdinfo': Permission denied
+find: `/proc/934/task/936/ns': Permission denied
+find: `/proc/934/task/939/fd': Permission denied
+find: `/proc/934/task/939/fdinfo': Permission denied
+find: `/proc/934/task/939/ns': Permission denied
+find: `/proc/934/fd': Permission denied
+find: `/proc/934/fdinfo': Permission denied
+find: `/proc/934/ns': Permission denied
+find: `/proc/943/task/943/fd': Permission denied
+find: `/proc/943/task/943/fdinfo': Permission denied
+find: `/proc/943/task/943/ns': Permission denied
+find: `/proc/943/task/946/fd': Permission denied
+find: `/proc/943/task/946/fdinfo': Permission denied
+find: `/proc/943/task/946/ns': Permission denied
+find: `/proc/943/task/954/fd': Permission denied
+find: `/proc/943/task/954/fdinfo': Permission denied
+find: `/proc/943/task/954/ns': Permission denied
+find: `/proc/943/fd': Permission denied
+find: `/proc/943/fdinfo': Permission denied
+find: `/proc/943/ns': Permission denied
+find: `/proc/947/task/947/fd': Permission denied
+find: `/proc/947/task/947/fdinfo': Permission denied
+find: `/proc/947/task/947/ns': Permission denied
+find: `/proc/947/task/948/fd': Permission denied
+find: `/proc/947/task/948/fdinfo': Permission denied
+find: `/proc/947/task/948/ns': Permission denied
+find: `/proc/947/task/950/fd': Permission denied
+find: `/proc/947/task/950/fdinfo': Permission denied
+find: `/proc/947/task/950/ns': Permission denied
+find: `/proc/947/task/951/fd': Permission denied
+find: `/proc/947/task/951/fdinfo': Permission denied
+find: `/proc/947/task/951/ns': Permission denied
+find: `/proc/947/task/953/fd': Permission denied
+find: `/proc/947/task/953/fdinfo': Permission denied
+find: `/proc/947/task/953/ns': Permission denied
+find: `/proc/947/task/7159/fd': Permission denied
+find: `/proc/947/task/7159/fdinfo': Permission denied
+find: `/proc/947/task/7159/ns': Permission denied
+find: `/proc/947/fd': Permission denied
+find: `/proc/947/fdinfo': Permission denied
+find: `/proc/947/ns': Permission denied
+find: `/proc/957/task/957/fd': Permission denied
+find: `/proc/957/task/957/fdinfo': Permission denied
+find: `/proc/957/task/957/ns': Permission denied
+find: `/proc/957/task/959/fd': Permission denied
+find: `/proc/957/task/959/fdinfo': Permission denied
+find: `/proc/957/task/959/ns': Permission denied
+find: `/proc/957/fd': Permission denied
+find: `/proc/957/fdinfo': Permission denied
+find: `/proc/957/ns': Permission denied
+find: `/proc/961/task/961/fd': Permission denied
+find: `/proc/961/task/961/fdinfo': Permission denied
+find: `/proc/961/task/961/ns': Permission denied
+find: `/proc/961/task/962/fd': Permission denied
+find: `/proc/961/task/962/fdinfo': Permission denied
+find: `/proc/961/task/962/ns': Permission denied
+find: `/proc/961/task/964/fd': Permission denied
+find: `/proc/961/task/964/fdinfo': Permission denied
+find: `/proc/961/task/964/ns': Permission denied
+find: `/proc/961/fd': Permission denied
+find: `/proc/961/fdinfo': Permission denied
+find: `/proc/961/ns': Permission denied
+find: `/proc/966/task/966/fd': Permission denied
+find: `/proc/966/task/966/fdinfo': Permission denied
+find: `/proc/966/task/966/ns': Permission denied
+find: `/proc/966/task/968/fd': Permission denied
+find: `/proc/966/task/968/fdinfo': Permission denied
+find: `/proc/966/task/968/ns': Permission denied
+find: `/proc/966/fd': Permission denied
+find: `/proc/966/fdinfo': Permission denied
+find: `/proc/966/ns': Permission denied
+find: `/proc/970/task/970/fd': Permission denied
+find: `/proc/970/task/970/fdinfo': Permission denied
+find: `/proc/970/task/970/ns': Permission denied
+find: `/proc/970/task/971/fd': Permission denied
+find: `/proc/970/task/971/fdinfo': Permission denied
+find: `/proc/970/task/971/ns': Permission denied
+find: `/proc/970/fd': Permission denied
+find: `/proc/970/fdinfo': Permission denied
+find: `/proc/970/ns': Permission denied
+find: `/proc/977/task/977/fd': Permission denied
+find: `/proc/977/task/977/fdinfo': Permission denied
+find: `/proc/977/task/977/ns': Permission denied
+find: `/proc/977/task/978/fd': Permission denied
+find: `/proc/977/task/978/fdinfo': Permission denied
+find: `/proc/977/task/978/ns': Permission denied
+find: `/proc/977/task/980/fd': Permission denied
+find: `/proc/977/task/980/fdinfo': Permission denied
+find: `/proc/977/task/980/ns': Permission denied
+find: `/proc/977/fd': Permission denied
+find: `/proc/977/fdinfo': Permission denied
+find: `/proc/977/ns': Permission denied
+find: `/proc/983/task/983/fd': Permission denied
+find: `/proc/983/task/983/fdinfo': Permission denied
+find: `/proc/983/task/983/ns': Permission denied
+find: `/proc/983/task/988/fd': Permission denied
+find: `/proc/983/task/988/fdinfo': Permission denied
+find: `/proc/983/task/988/ns': Permission denied
+find: `/proc/983/task/993/fd': Permission denied
+find: `/proc/983/task/993/fdinfo': Permission denied
+find: `/proc/983/task/993/ns': Permission denied
+find: `/proc/983/fd': Permission denied
+find: `/proc/983/fdinfo': Permission denied
+find: `/proc/983/ns': Permission denied
+find: `/proc/1076/task/1076/fd': Permission denied
+find: `/proc/1076/task/1076/fdinfo': Permission denied
+find: `/proc/1076/task/1076/ns': Permission denied
+find: `/proc/1076/fd': Permission denied
+find: `/proc/1076/fdinfo': Permission denied
+find: `/proc/1076/ns': Permission denied
+find: `/proc/1077/task/1077/fd': Permission denied
+find: `/proc/1077/task/1077/fdinfo': Permission denied
+find: `/proc/1077/task/1077/ns': Permission denied
+find: `/proc/1077/fd': Permission denied
+find: `/proc/1077/fdinfo': Permission denied
+find: `/proc/1077/ns': Permission denied
+find: `/proc/1134/task/1134/fd': Permission denied
+find: `/proc/1134/task/1134/fdinfo': Permission denied
+find: `/proc/1134/task/1134/ns': Permission denied
+find: `/proc/1134/fd': Permission denied
+find: `/proc/1134/fdinfo': Permission denied
+find: `/proc/1134/ns': Permission denied
+find: `/proc/5957/task/5957/fd': Permission denied
+find: `/proc/5957/task/5957/fdinfo': Permission denied
+find: `/proc/5957/task/5957/ns': Permission denied
+find: `/proc/5957/fd': Permission denied
+find: `/proc/5957/fdinfo': Permission denied
+find: `/proc/5957/ns': Permission denied
+find: `/proc/6033/task/6033/fd': Permission denied
+find: `/proc/6033/task/6033/fdinfo': Permission denied
+find: `/proc/6033/task/6033/ns': Permission denied
+find: `/proc/6033/fd': Permission denied
+find: `/proc/6033/fdinfo': Permission denied
+find: `/proc/6033/ns': Permission denied
+find: `/proc/6052/task/6052/fd': Permission denied
+find: `/proc/6052/task/6052/fdinfo': Permission denied
+find: `/proc/6052/task/6052/ns': Permission denied
+find: `/proc/6052/fd': Permission denied
+find: `/proc/6052/fdinfo': Permission denied
+find: `/proc/6052/ns': Permission denied
+find: `/proc/6065/task/6065/fd': Permission denied
+find: `/proc/6065/task/6065/fdinfo': Permission denied
+find: `/proc/6065/task/6065/ns': Permission denied
+find: `/proc/6065/fd': Permission denied
+find: `/proc/6065/fdinfo': Permission denied
+find: `/proc/6065/ns': Permission denied
+find: `/proc/6069/task/6069/fd': Permission denied
+find: `/proc/6069/task/6069/fdinfo': Permission denied
+find: `/proc/6069/task/6069/ns': Permission denied
+find: `/proc/6069/fd': Permission denied
+find: `/proc/6069/fdinfo': Permission denied
+find: `/proc/6069/ns': Permission denied
+find: `/proc/6788/task/6788/fd': Permission denied
+find: `/proc/6788/task/6788/fdinfo': Permission denied
+find: `/proc/6788/task/6788/ns': Permission denied
+find: `/proc/6788/task/6789/fd': Permission denied
+find: `/proc/6788/task/6789/fdinfo': Permission denied
+find: `/proc/6788/task/6789/ns': Permission denied
+find: `/proc/6788/task/6791/fd': Permission denied
+find: `/proc/6788/task/6791/fdinfo': Permission denied
+find: `/proc/6788/task/6791/ns': Permission denied
+find: `/proc/6788/fd': Permission denied
+find: `/proc/6788/fdinfo': Permission denied
+find: `/proc/6788/ns': Permission denied
+find: `/proc/6819/task/6819/fd': Permission denied
+find: `/proc/6819/task/6819/fdinfo': Permission denied
+find: `/proc/6819/task/6819/ns': Permission denied
+find: `/proc/6819/fd': Permission denied
+find: `/proc/6819/fdinfo': Permission denied
+find: `/proc/6819/ns': Permission denied
+find: `/proc/6856/task/6856/fd': Permission denied
+find: `/proc/6856/task/6856/fdinfo': Permission denied
+find: `/proc/6856/task/6856/ns': Permission denied
+find: `/proc/6856/fd': Permission denied
+find: `/proc/6856/fdinfo': Permission denied
+find: `/proc/6856/ns': Permission denied
+find: `/proc/7020/task/7020/fd': Permission denied
+find: `/proc/7020/task/7020/fdinfo': Permission denied
+find: `/proc/7020/task/7020/ns': Permission denied
+find: `/proc/7020/fd': Permission denied
+find: `/proc/7020/fdinfo': Permission denied
+find: `/proc/7020/ns': Permission denied
+find: `/proc/7070/task/7070/fd': Permission denied
+find: `/proc/7070/task/7070/fdinfo': Permission denied
+find: `/proc/7070/task/7070/ns': Permission denied
+find: `/proc/7070/fd': Permission denied
+find: `/proc/7070/fdinfo': Permission denied
+find: `/proc/7070/ns': Permission denied
+find: `/proc/7071/task/7071/fd': Permission denied
+find: `/proc/7071/task/7071/fdinfo': Permission denied
+find: `/proc/7071/task/7071/ns': Permission denied
+find: `/proc/7071/fd': Permission denied
+find: `/proc/7071/fdinfo': Permission denied
+find: `/proc/7071/ns': Permission denied
+find: `/proc/7079/task/7079/fd': Permission denied
+find: `/proc/7079/task/7079/fdinfo': Permission denied
+find: `/proc/7079/task/7079/ns': Permission denied
+find: `/proc/7079/fd': Permission denied
+find: `/proc/7079/fdinfo': Permission denied
+find: `/proc/7079/ns': Permission denied
+find: `/proc/7085/task/7085/fd': Permission denied
+find: `/proc/7085/task/7085/fdinfo': Permission denied
+find: `/proc/7085/task/7085/ns': Permission denied
+find: `/proc/7085/fd': Permission denied
+find: `/proc/7085/fdinfo': Permission denied
+find: `/proc/7085/ns': Permission denied
+find: `/proc/7128/task/7128/fd': Permission denied
+find: `/proc/7128/task/7128/fdinfo': Permission denied
+find: `/proc/7128/task/7128/ns': Permission denied
+find: `/proc/7128/fd': Permission denied
+find: `/proc/7128/fdinfo': Permission denied
+find: `/proc/7128/ns': Permission denied
+find: `/proc/7157/task/7157/fd': Permission denied
+find: `/proc/7157/task/7157/fdinfo': Permission denied
+find: `/proc/7157/task/7157/ns': Permission denied
+find: `/proc/7157/fd': Permission denied
+find: `/proc/7157/fdinfo': Permission denied
+find: `/proc/7157/ns': Permission denied
+find: `/proc/7158/task/7158/fd': Permission denied
+find: `/proc/7158/task/7158/fdinfo': Permission denied
+find: `/proc/7158/task/7158/ns': Permission denied
+find: `/proc/7158/fd': Permission denied
+find: `/proc/7158/fdinfo': Permission denied
+find: `/proc/7158/ns': Permission denied
+find: `/var/lib/polkit-1': Permission denied
+find: `/var/lib/lightdm': Permission denied
+find: `/var/lib/udisks2': Permission denied
+find: `/var/lib/container': Permission denied
+find: `/var/lib/sudo/ts': Permission denied
+find: `/var/lib/sudo/lectured': Permission denied
+/var/lib/systemd/deb-systemd-helper-enabled/syslog.service
+/var/log/syslog.3.gz
+/var/log/syslog.1
+/var/log/syslog.5.gz
+/var/log/syslog.6.gz
+find: `/var/log/samba': Permission denied
+/var/log/syslog.2.gz
+find: `/var/log/lightdm': Permission denied
+/var/log/syslog.4.gz
+/var/log/syslog
+/var/log/syslog.7.gz
+find: `/var/cache/ldconfig': Permission denied
+find: `/var/cache/lightdm': Permission denied
+find: `/var/spool/cron/crontabs': Permission denied
+find: `/var/spool/rsyslog': Permission denied
+find: `/tmp/ssh-qW1nPEBaN2D3': Permission denied
+find: `/tmp/ssh-Uy5wdM3sy2lG': Permission denied
+find: `/home/pi/.dbus': Permission denied
+find: `/home/pi/.thumbnails': Permission denied
+find: `/home/pi/.gconf': Permission denied
+find: `/home/pi/.cache/menus': Permission denied
+find: `/home/pi/.cache/openbox/sessions': Permission denied
+find: `/home/pi/.config/libfm': Permission denied
+find: `/home/pi/.config/leafpad': Permission denied
+find: `/home/pi/.config/lxterminal': Permission denied
+find: `/root': Permission denied
+find: `/sys/fs/fuse/connections/31': Permission denied
+find: `/sys/devices/platform/soc/3f200000.gpio/gpio': Permission denied
+find: `/sys/class/gpio': Permission denied
+find: `/sys/kernel/debug': Permission denied
+phelipe@raspberrypi:~ $  find / -iname 'syslog*' 2>/dev/null
+/usr/lib/ruby/2.1.0/syslog
+/usr/lib/ruby/1.9.1/arm-linux-eabihf/syslog.so
+/usr/lib/pypy-upstream/lib_pypy/syslog.py
+/usr/lib/pypy-upstream/lib_pypy/syslog.pyc
+/usr/lib/arm-linux-gnueabihf/ruby/2.1.0/syslog.so
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/auto/Sys/Syslog
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/auto/Sys/Syslog/Syslog.so
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/syslog.ph
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/bits/syslog-path.ph
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/bits/syslog-ldbl.ph
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/bits/syslog.ph
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/Sys/Syslog.pm
+/usr/lib/arm-linux-gnueabihf/perl/5.20.2/sys/syslog.ph
+/usr/share/doc/libruby1.9.1/syslog
+/usr/share/doc/libruby1.9.1/syslog/syslog.txt
+/usr/share/doc/busybox/syslog.conf.txt
+/usr/share/ri/1.9.1/system/Syslog
+/usr/share/man/man3/syslog.3.gz
+/usr/share/man/man2/syslog.2.gz
+/usr/include/syslog.h
+/usr/include/arm-linux-gnueabihf/bits/syslog-path.h
+/usr/include/arm-linux-gnueabihf/bits/syslog-ldbl.h
+/usr/include/arm-linux-gnueabihf/bits/syslog.h
+/usr/include/arm-linux-gnueabihf/sys/syslog.h
+/lib/systemd/system/syslog.socket
+/run/systemd/journal/syslog
+/etc/systemd/system/syslog.service
+/var/lib/systemd/deb-systemd-helper-enabled/syslog.service
+/var/log/syslog.3.gz
+/var/log/syslog.1
+/var/log/syslog.5.gz
+/var/log/syslog.6.gz
+/var/log/syslog.2.gz
+/var/log/syslog.4.gz
+/var/log/syslog
+/var/log/syslog.7.gz
